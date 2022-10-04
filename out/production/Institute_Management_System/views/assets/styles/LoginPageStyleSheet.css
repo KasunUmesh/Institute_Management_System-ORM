@@ -1,0 +1,3 @@
+.colorGrad{
+    -fx-background-color: linear-gradient(to right, #ccffff 0%, #ffffff 70%);
+}

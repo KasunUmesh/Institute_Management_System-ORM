@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="spStudentManagement" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="962.0" prefWidth="1288.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentManagementFormController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <AnchorPane prefHeight="992.0" prefWidth="1288.0" style="-fx-background-color: #E1F5FE;">
+               <children>
+                  <Button id="button" alignment="CENTER_RIGHT" layoutX="948.0" layoutY="55.0" mnemonicParsing="false" onAction="#btnStudentRegistorOnAction" prefHeight="100.0" prefWidth="315.0" text="Register Student" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#ecf0f1" glyphName="USER_PLUS" size="65" translateX="-63.0" wrappingWidth="15.047537803649902" />
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <styleClass>
+                        <String fx:value="buttonColor" />
+                        <String fx:value="buttonDash" />
+                        <String fx:value="buttonShadow" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="button" fx:id="btnStudentDetails" alignment="CENTER_RIGHT" layoutX="576.0" layoutY="55.0" mnemonicParsing="false" onAction="#btnStudentDetailsOnAction" prefHeight="100.0" prefWidth="332.0" text="Student Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <styleClass>
+                        <String fx:value="buttonColor" />
+                        <String fx:value="buttonDash" />
+                        <String fx:value="buttonShadow" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="79.0" fitWidth="88.0" opacity="0.78" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/images/icons8-identification-documents-100.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="button" fx:id="btnStudentProgramDetails" alignment="CENTER_RIGHT" layoutX="105.0" layoutY="55.0" mnemonicParsing="false" onAction="#btnStudentProgramDetailsOnAction" prefHeight="100.0" prefWidth="435.0" text="Student Program Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <styleClass>
+                        <String fx:value="buttonColor" />
+                        <String fx:value="buttonDash" />
+                        <String fx:value="buttonShadow" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="MORTAR_BOARD" size="65" />
+                     </graphic>
+                  </Button>
+                  <Pane fx:id="pnStudentRegister" prefHeight="963.0" prefWidth="1288.0" style="-fx-background-color: #ecf0f1;" visible="false">
+                     <children>
+                        <JFXTextField labelFloat="true" layoutX="548.0" layoutY="219.0" prefHeight="50.0" prefWidth="664.0" promptText="Full Name">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" layoutX="69.0" layoutY="219.0" prefHeight="50.0" prefWidth="409.0" promptText="Student ID">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" layoutX="68.0" layoutY="349.0" prefHeight="50.0" prefWidth="428.0" promptText="Address">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" layoutX="925.0" layoutY="349.0" prefHeight="50.0" prefWidth="282.0" promptText="Contact Number">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXDatePicker layoutX="69.0" layoutY="491.0" overLay="true" prefHeight="50.0" prefWidth="409.0" promptText="Birthday" />
+                        <JFXCheckBox layoutX="661.0" layoutY="511.0" text="Male">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXCheckBox>
+                        <Label layoutX="541.0" layoutY="511.0" text="Gender :">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox layoutX="766.0" layoutY="511.0" text="Female">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXCheckBox>
+                        <JFXTextField labelFloat="true" layoutX="924.0" layoutY="491.0" prefHeight="50.0" prefWidth="288.0" promptText="Register Date">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" layoutX="555.0" layoutY="349.0" prefHeight="50.0" prefWidth="336.0" promptText="NIC">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXComboBox labelFloat="true" layoutX="69.0" layoutY="647.0" prefHeight="50.0" prefWidth="235.0" promptText="Program ID" />
+                        <JFXTextField labelFloat="true" layoutX="344.0" layoutY="647.0" prefHeight="50.0" prefWidth="399.0" promptText="Program">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" layoutX="771.0" layoutY="647.0" prefHeight="50.0" prefWidth="203.0" promptText="Duration">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" layoutX="998.0" layoutY="647.0" prefHeight="50.0" prefWidth="216.0" promptText="Fee (LKR)">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="439.0" layoutY="42.0" text="Student Registertion" textFill="#2c3e50">
+                           <font>
+                              <Font name="System Bold" size="40.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="968.0" layoutY="829.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="252.0" style="-fx-background-color: #2ecc71;" text="Save" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="buttonDash" />
+                              <String fx:value="buttonShadow" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="671.0" layoutY="830.0" mnemonicParsing="false" onAction="#btnCancelStudentRegistorOnAction" prefHeight="55.0" prefWidth="252.0" style="-fx-background-color: #f39c12;" text="Cancel" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="buttonDash" />
+                              <String fx:value="buttonShadow" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnStudentDetails" layoutY="230.0" prefHeight="732.0" prefWidth="1288.0" style="-fx-background-color: #E1F5FE;">
+                     <children>
+                        <TableView layoutX="23.0" layoutY="110.0" prefHeight="471.0" prefWidth="1237.0">
+                          <columns>
+                            <TableColumn prefWidth="87.66666412353516" text="Student ID" />
+                            <TableColumn prefWidth="294.6666564941406" text="Student Name" />
+                              <TableColumn prefWidth="288.66668701171875" text="Address" />
+                              <TableColumn prefWidth="143.33331298828125" text="Birthday" />
+                              <TableColumn prefWidth="83.33331298828125" text="Gender" />
+                              <TableColumn prefWidth="193.0" text="NIC Number" />
+                              <TableColumn prefWidth="149.0" text="Contact Number" />
+                          </columns>
+                        </TableView>
+                        <JFXTextField labelFloat="true" layoutX="746.0" layoutY="23.0" prefHeight="44.0" prefWidth="513.0" promptText="Search">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <FontAwesomeIconView glyphName="SEARCH" layoutX="1225.0" layoutY="59.0" opacity="0.35" size="25" />
+                        <Button layoutX="1016.0" layoutY="634.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="236.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="buttonShadow" />
+                              <String fx:value="buttonDash" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="747.0" layoutY="634.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="236.0" style="-fx-background-color: #2ecc71;" text="Edit Details" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="buttonShadow" />
+                              <String fx:value="buttonDash" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnStudentProgramDetails" layoutY="230.0" prefHeight="732.0" prefWidth="1288.0" style="-fx-background-color: #E1F5FE;">
+                     <children>
+                        <TableView layoutX="23.0" layoutY="110.0" prefHeight="471.0" prefWidth="1237.0">
+                           <columns>
+                              <TableColumn prefWidth="127.0" text="Student ID" />
+                              <TableColumn prefWidth="346.0" text="Student Name" />
+                              <TableColumn prefWidth="115.0" text="Program ID" />
+                              <TableColumn prefWidth="351.3333740234375" text="Program" />
+                              <TableColumn prefWidth="151.6666259765625" text="Duration" />
+                              <TableColumn prefWidth="146.6666259765625" text="Fee (LKR)" />
+                           </columns>
+                        </TableView>
+                        <JFXTextField labelFloat="true" layoutX="746.0" layoutY="23.0" prefHeight="44.0" prefWidth="513.0" promptText="Search">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <FontAwesomeIconView glyphName="SEARCH" layoutX="1225.0" layoutY="59.0" opacity="0.35" size="25" />
+                        <Button layoutX="1016.0" layoutY="634.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="236.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="buttonShadow" />
+                              <String fx:value="buttonDash" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Pane layoutX="27.0" layoutY="617.0" prefHeight="88.0" prefWidth="410.0" style="-fx-background-color: ffffff; -fx-background-radius: 20px;">
+                           <children>
+                              <Label layoutX="66.0" layoutY="17.0" text="Student :" textFill="#e74c3c">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="245.0" layoutY="20.0" text="OOO" textFill="#304ffe">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <effect>
+                              <DropShadow color="#00000073" />
+                           </effect>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@assets/styles/TableStyleSheet.css" />
+      <URL value="@assets/styles/StudentManagementStylesSheet.css" />
+   </stylesheets>
+</StackPane>
