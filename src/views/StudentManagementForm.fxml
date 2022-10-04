@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -89,66 +88,51 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="MORTAR_BOARD" size="65" />
                      </graphic>
                   </Button>
-                  <Pane fx:id="pnStudentRegister" prefHeight="963.0" prefWidth="1288.0" style="-fx-background-color: #ecf0f1;" visible="false">
+                  <Pane fx:id="pnStudentRegister" prefHeight="963.0" prefWidth="1288.0" style="-fx-background-color: #ecf0f1;">
                      <children>
-                        <JFXTextField labelFloat="true" layoutX="548.0" layoutY="219.0" prefHeight="50.0" prefWidth="664.0" promptText="Full Name">
+                        <JFXTextField fx:id="txtFullName" labelFloat="true" layoutX="548.0" layoutY="219.0" prefHeight="50.0" prefWidth="664.0" promptText="Full Name">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField labelFloat="true" layoutX="69.0" layoutY="219.0" prefHeight="50.0" prefWidth="409.0" promptText="Student ID">
+                        <JFXTextField fx:id="txtStudentId" labelFloat="true" layoutX="69.0" layoutY="219.0" prefHeight="50.0" prefWidth="409.0" promptText="Student ID">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField labelFloat="true" layoutX="68.0" layoutY="349.0" prefHeight="50.0" prefWidth="428.0" promptText="Address">
+                        <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="68.0" layoutY="349.0" prefHeight="50.0" prefWidth="428.0" promptText="Address">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField labelFloat="true" layoutX="925.0" layoutY="349.0" prefHeight="50.0" prefWidth="282.0" promptText="Contact Number">
+                        <JFXTextField fx:id="txtContactNumber" labelFloat="true" layoutX="925.0" layoutY="349.0" prefHeight="50.0" prefWidth="282.0" promptText="Contact Number">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </JFXTextField>
-                        <JFXDatePicker layoutX="69.0" layoutY="491.0" overLay="true" prefHeight="50.0" prefWidth="409.0" promptText="Birthday" />
-                        <JFXCheckBox layoutX="661.0" layoutY="511.0" text="Male">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </JFXCheckBox>
-                        <Label layoutX="541.0" layoutY="511.0" text="Gender :">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <JFXCheckBox layoutX="766.0" layoutY="511.0" text="Female">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </JFXCheckBox>
-                        <JFXTextField labelFloat="true" layoutX="924.0" layoutY="491.0" prefHeight="50.0" prefWidth="288.0" promptText="Register Date">
+                        <JFXDatePicker fx:id="dpBirthday" layoutX="69.0" layoutY="491.0" overLay="true" prefHeight="50.0" prefWidth="409.0" promptText="Birthday" />
+                        <JFXTextField fx:id="txtregDate" labelFloat="true" layoutX="924.0" layoutY="491.0" prefHeight="50.0" prefWidth="288.0" promptText="Register Date">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField labelFloat="true" layoutX="555.0" layoutY="349.0" prefHeight="50.0" prefWidth="336.0" promptText="NIC">
+                        <JFXTextField fx:id="txtNic" labelFloat="true" layoutX="555.0" layoutY="349.0" prefHeight="50.0" prefWidth="336.0" promptText="NIC">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </JFXTextField>
-                        <JFXComboBox labelFloat="true" layoutX="69.0" layoutY="647.0" prefHeight="50.0" prefWidth="235.0" promptText="Program ID" />
-                        <JFXTextField labelFloat="true" layoutX="344.0" layoutY="647.0" prefHeight="50.0" prefWidth="399.0" promptText="Program">
+                        <JFXComboBox fx:id="cmbProgramID" labelFloat="true" layoutX="69.0" layoutY="647.0" prefHeight="50.0" prefWidth="235.0" promptText="Program ID" />
+                        <JFXTextField fx:id="txtProgram" labelFloat="true" layoutX="344.0" layoutY="647.0" prefHeight="50.0" prefWidth="399.0" promptText="Program">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField labelFloat="true" layoutX="771.0" layoutY="647.0" prefHeight="50.0" prefWidth="203.0" promptText="Duration">
+                        <JFXTextField fx:id="txtDuration" labelFloat="true" layoutX="771.0" layoutY="647.0" prefHeight="50.0" prefWidth="203.0" promptText="Duration">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField labelFloat="true" layoutX="998.0" layoutY="647.0" prefHeight="50.0" prefWidth="216.0" promptText="Fee (LKR)">
+                        <JFXTextField fx:id="txtFree" labelFloat="true" layoutX="998.0" layoutY="647.0" prefHeight="50.0" prefWidth="216.0" promptText="Fee (LKR)">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -158,7 +142,7 @@
                               <Font name="System Bold" size="40.0" />
                            </font>
                         </Label>
-                        <Button layoutX="968.0" layoutY="829.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="252.0" style="-fx-background-color: #2ecc71;" text="Save" textFill="WHITE">
+                        <Button layoutX="968.0" layoutY="829.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="55.0" prefWidth="252.0" style="-fx-background-color: #2ecc71;" text="Save" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="25.0" />
                            </font>
@@ -182,9 +166,10 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
+                        <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="543.0" layoutY="491.0" prefHeight="50.0" prefWidth="288.0" promptText="Gender" />
                      </children>
                   </Pane>
-                  <Pane fx:id="pnStudentDetails" layoutY="230.0" prefHeight="732.0" prefWidth="1288.0" style="-fx-background-color: #E1F5FE;">
+                  <Pane fx:id="pnStudentDetails" layoutY="230.0" prefHeight="732.0" prefWidth="1288.0" style="-fx-background-color: #E1F5FE;" visible="false">
                      <children>
                         <TableView layoutX="23.0" layoutY="110.0" prefHeight="471.0" prefWidth="1237.0">
                           <columns>
@@ -229,7 +214,7 @@
                         </Button>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnStudentProgramDetails" layoutY="230.0" prefHeight="732.0" prefWidth="1288.0" style="-fx-background-color: #E1F5FE;">
+                  <Pane fx:id="pnStudentProgramDetails" layoutY="230.0" prefHeight="732.0" prefWidth="1288.0" style="-fx-background-color: #E1F5FE;" visible="false">
                      <children>
                         <TableView layoutX="23.0" layoutY="110.0" prefHeight="471.0" prefWidth="1237.0">
                            <columns>

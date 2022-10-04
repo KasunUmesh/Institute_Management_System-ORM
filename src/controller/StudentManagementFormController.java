@@ -1,6 +1,9 @@
 package controller;
 
 import animatefx.animation.*;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
@@ -17,6 +20,18 @@ public class StudentManagementFormController {
     public Button btnStudentDetails;
     public Button btnStudentProgramDetails;
     public StackPane spStudentManagement;
+    public JFXTextField txtFullName;
+    public JFXTextField txtStudentId;
+    public JFXTextField txtAddress;
+    public JFXTextField txtContactNumber;
+    public JFXDatePicker dpBirthday;
+    public JFXTextField txtregDate;
+    public JFXTextField txtNic;
+    public JFXComboBox cmbProgramID;
+    public JFXTextField txtProgram;
+    public JFXTextField txtDuration;
+    public JFXTextField txtFree;
+    public JFXComboBox cmbGender;
 
     public void initialize() {
 
@@ -61,5 +76,8 @@ public class StudentManagementFormController {
         btnStudentProgramDetails.setDisable(true);
         btnStudentDetails.setDisable(false);
         new ZoomIn(pnStudentProgramDetails).play();
+    }
+
+    public void btnSaveOnAction(ActionEvent actionEvent) {
     }
 }
