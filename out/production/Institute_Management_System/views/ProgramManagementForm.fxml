@@ -19,27 +19,27 @@
          <children>
             <AnchorPane prefHeight="962.0" prefWidth="1288.0" style="-fx-background-color: #E1F5FE;">
                <children>
-                  <JFXTextField labelFloat="true" layoutX="53.0" layoutY="46.0" prefHeight="46.0" prefWidth="428.0" promptText="Program ID">
+                  <JFXTextField fx:id="txtProgramID" labelFloat="true" layoutX="53.0" layoutY="46.0" prefHeight="46.0" prefWidth="428.0" promptText="Program ID">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField labelFloat="true" layoutX="557.0" layoutY="46.0" prefHeight="46.0" prefWidth="692.0" promptText="Training Program ">
+                  <JFXTextField fx:id="txtProgramDetail" labelFloat="true" layoutX="557.0" layoutY="46.0" prefHeight="46.0" prefWidth="692.0" promptText="Training Program ">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField labelFloat="true" layoutX="51.0" layoutY="174.0" prefHeight="46.0" prefWidth="428.0" promptText="Duration">
+                  <JFXTextField fx:id="txtDuration" labelFloat="true" layoutX="51.0" layoutY="174.0" prefHeight="46.0" prefWidth="428.0" promptText="Duration">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField labelFloat="true" layoutX="559.0" layoutY="174.0" prefHeight="46.0" prefWidth="253.0" promptText="Program Fee (LKR)">
+                  <JFXTextField fx:id="txtProgramFree" labelFloat="true" layoutX="559.0" layoutY="174.0" prefHeight="46.0" prefWidth="253.0" promptText="Program Fee (LKR)">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </JFXTextField>
-                  <Button layoutX="974.0" layoutY="156.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="269.0" style="-fx-background-color: #2ecc71;" text="Add Program" textFill="WHITE">
+                  <Button layoutX="974.0" layoutY="156.0" mnemonicParsing="false" onAction="#btnAddProgramOnAction" prefHeight="63.0" prefWidth="269.0" style="-fx-background-color: #2ecc71;" text="Add Program" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
@@ -51,12 +51,12 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <TableView layoutX="44.0" layoutY="355.0" prefHeight="517.0" prefWidth="1203.0">
+                  <TableView fx:id="tblProgramDetails" layoutX="44.0" layoutY="355.0" prefHeight="517.0" prefWidth="1203.0">
                     <columns>
-                      <TableColumn prefWidth="191.3333282470703" text="Program ID" />
-                      <TableColumn prefWidth="536.6666717529297" text="Training Program Name" />
-                        <TableColumn prefWidth="270.0" text="Duration" />
-                        <TableColumn prefWidth="204.0" text="Fee (LKR)" />
+                      <TableColumn fx:id="colProgramId" prefWidth="191.3333282470703" text="Program ID" />
+                      <TableColumn fx:id="colProgramDetails" prefWidth="536.6666717529297" text="Training Program Name" />
+                        <TableColumn fx:id="colDuration" prefWidth="270.0" text="Duration" />
+                        <TableColumn fx:id="colFree" prefWidth="204.0" text="Fee (LKR)" />
                     </columns>
                   </TableView>
                   <JFXTextField labelFloat="true" layoutX="762.0" layoutY="294.0" prefHeight="35.0" prefWidth="478.0" promptText="Search">

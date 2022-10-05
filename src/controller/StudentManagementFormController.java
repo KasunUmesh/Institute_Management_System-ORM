@@ -46,7 +46,7 @@ public class StudentManagementFormController {
     public JFXTextField txtDuration;
     public JFXTextField txtFree;
     public JFXComboBox cmbGender;
-    public TableView tblStudentDetails;
+    public TableView<StudentTm> tblStudentDetails;
     public TableColumn colStudentId;
     public TableColumn colStudentName;
     public TableColumn colStAddress;
