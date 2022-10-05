@@ -65,7 +65,7 @@
                      </font>
                   </JFXTextField>
                   <FontAwesomeIconView glyphName="SEARCH" layoutX="1204.0" layoutY="330.0" opacity="0.35" size="25" />
-                  <Button layoutX="1041.0" layoutY="891.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="202.0" style="-fx-background-color: #e67e22;" text="Edit" textFill="WHITE">
+                  <Button layoutX="1041.0" layoutY="891.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="47.0" prefWidth="202.0" style="-fx-background-color: #e67e22;" text="Update" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
@@ -77,7 +77,7 @@
                         <String fx:value="buttonShadow" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="815.0" layoutY="891.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="202.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
+                  <Button layoutX="815.0" layoutY="891.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="47.0" prefWidth="202.0" style="-fx-background-color: #e74c3c;" text="Delete" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
