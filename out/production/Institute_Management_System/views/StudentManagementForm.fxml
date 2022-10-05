@@ -88,7 +88,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="MORTAR_BOARD" size="65" />
                      </graphic>
                   </Button>
-                  <Pane fx:id="pnStudentRegister" prefHeight="963.0" prefWidth="1288.0" style="-fx-background-color: #ecf0f1;">
+                  <Pane fx:id="pnStudentRegister" prefHeight="963.0" prefWidth="1288.0" style="-fx-background-color: #ecf0f1;" visible="false">
                      <children>
                         <JFXTextField fx:id="txtFullName" labelFloat="true" layoutX="548.0" layoutY="219.0" prefHeight="50.0" prefWidth="664.0" promptText="Full Name">
                            <font>
@@ -169,17 +169,18 @@
                         <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="543.0" layoutY="491.0" prefHeight="50.0" prefWidth="288.0" promptText="Gender" />
                      </children>
                   </Pane>
-                  <Pane fx:id="pnStudentDetails" layoutY="230.0" prefHeight="732.0" prefWidth="1288.0" style="-fx-background-color: #E1F5FE;" visible="false">
+                  <Pane fx:id="pnStudentDetails" layoutY="230.0" prefHeight="732.0" prefWidth="1288.0" style="-fx-background-color: #E1F5FE;">
                      <children>
-                        <TableView layoutX="23.0" layoutY="110.0" prefHeight="471.0" prefWidth="1237.0">
+                        <TableView fx:id="tblStudentDetails" layoutX="23.0" layoutY="110.0" prefHeight="471.0" prefWidth="1237.0">
                           <columns>
-                            <TableColumn prefWidth="87.66666412353516" text="Student ID" />
-                            <TableColumn prefWidth="294.6666564941406" text="Student Name" />
-                              <TableColumn prefWidth="288.66668701171875" text="Address" />
-                              <TableColumn prefWidth="143.33331298828125" text="Birthday" />
-                              <TableColumn prefWidth="83.33331298828125" text="Gender" />
-                              <TableColumn prefWidth="193.0" text="NIC Number" />
-                              <TableColumn prefWidth="149.0" text="Contact Number" />
+                            <TableColumn fx:id="colStudentId" prefWidth="72.0" text="Student ID" />
+                            <TableColumn fx:id="colStudentName" prefWidth="230.00003051757812" text="Student Name" />
+                              <TableColumn fx:id="colStAddress" prefWidth="250.0" text="Address" />
+                              <TableColumn fx:id="colStBirthday" prefWidth="175.0" text="Birthday" />
+                              <TableColumn fx:id="colStGender" prefWidth="103.0" text="Gender" />
+                              <TableColumn fx:id="colStNic" prefWidth="161.0" text="NIC Number" />
+                              <TableColumn fx:id="colStContact" prefWidth="143.0" text="Contact Number" />
+                              <TableColumn fx:id="colStRegDate" prefWidth="102.0" text="Register Date" />
                           </columns>
                         </TableView>
                         <JFXTextField labelFloat="true" layoutX="746.0" layoutY="23.0" prefHeight="44.0" prefWidth="513.0" promptText="Search">

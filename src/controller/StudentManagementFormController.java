@@ -8,11 +8,20 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import dto.StudentDTO;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import views.tm.StudentTm;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import static org.dom4j.dom.DOMNodeHelper.setData;
 
 /**
  * @author : Kasun Umesh
@@ -37,6 +46,15 @@ public class StudentManagementFormController {
     public JFXTextField txtDuration;
     public JFXTextField txtFree;
     public JFXComboBox cmbGender;
+    public TableView tblStudentDetails;
+    public TableColumn colStudentId;
+    public TableColumn colStudentName;
+    public TableColumn colStAddress;
+    public TableColumn colStBirthday;
+    public TableColumn colStGender;
+    public TableColumn colStNic;
+    public TableColumn colStContact;
+    public TableColumn colStRegDate;
 
     StudentBOImpl studentBO = BOFactory.getInstance().getBO(BOType.STUDENT);
 
@@ -51,6 +69,58 @@ public class StudentManagementFormController {
         cmbGender.getItems().add("Male");
         cmbGender.getItems().add("Female");
 
+        findAll();
+//        tableListner();
+        setCellValueFactory();
+
+
+    }
+
+    private void setCellValueFactory(){
+        colStudentId.setCellValueFactory(new PropertyValueFactory<>("studentId"));
+        colStudentName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colStAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colStBirthday.setCellValueFactory(new PropertyValueFactory<>("birthday"));
+        colStGender.setCellValueFactory(new PropertyValueFactory<>("gender"));
+        colStNic.setCellValueFactory(new PropertyValueFactory<>("nic"));
+        colStContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        colStRegDate.setCellValueFactory(new PropertyValueFactory<>("regDate"));
+    }
+
+//    private void tableListner(){
+//        tblStudentDetails.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+//            setData((StudentTm) newValue);
+//        });
+//    }
+
+    private void setData(StudentTm tm) {
+        txtStudentId.setText(tm.getStudentId());
+        txtFullName.setText(tm.getStudentId());
+        txtAddress.setText(tm.getStudentId());
+        txtNic.setText(tm.getStudentId());
+        txtContactNumber.setText(tm.getStudentId());
+        dpBirthday.setValue(LocalDate.parse(tm.getStudentId()));
+        cmbGender.setValue(tm.getStudentId());
+        txtregDate.setText(tm.getStudentId());
+    }
+
+    private void findAll(){
+        ObservableList<StudentTm> tmlist = FXCollections.observableArrayList();
+        List<StudentDTO> all = studentBO.findAll();
+        for (StudentDTO dto : all){
+            StudentTm tm = new StudentTm(
+                    dto.getStudentId(),
+                    dto.getName(),
+                    dto.getAddress(),
+                    dto.getNic(),
+                    dto.getContact(),
+                    dto.getBirthday(),
+                    dto.getGender(),
+                    dto.getRegDate()
+            );
+            tmlist.add(tm);
+        }
+        tblStudentDetails.setItems(tmlist);
     }
 
     public void btnStudentRegistorOnAction(ActionEvent actionEvent) {
@@ -118,6 +188,7 @@ public class StudentManagementFormController {
             cmbGender.setValue(null);
             txtregDate.setText(null);
             new Alert(Alert.AlertType.INFORMATION, "Added...!").show();
+            findAll();
         }
 
     }
