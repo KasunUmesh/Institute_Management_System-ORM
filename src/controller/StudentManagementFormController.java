@@ -1,10 +1,15 @@
 package controller;
 
 import animatefx.animation.*;
+import business.BOFactory;
+import business.BOType;
+import business.custom.impl.StudentBOImpl;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import dto.StudentDTO;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -33,6 +38,8 @@ public class StudentManagementFormController {
     public JFXTextField txtFree;
     public JFXComboBox cmbGender;
 
+    StudentBOImpl studentBO = BOFactory.getInstance().getBO(BOType.STUDENT);
+
     public void initialize() {
 
         pnStudentRegister.setVisible(false);
@@ -40,6 +47,10 @@ public class StudentManagementFormController {
         pnStudentDetails.setVisible(true);
         btnStudentDetails.setDisable(true);
         btnStudentProgramDetails.setDisable(false);
+
+        cmbGender.getItems().add("Male");
+        cmbGender.getItems().add("Female");
+
     }
 
     public void btnStudentRegistorOnAction(ActionEvent actionEvent) {
@@ -79,5 +90,35 @@ public class StudentManagementFormController {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        String id = txtStudentId.getText();
+        String name = txtFullName.getText();
+        String address = txtAddress.getText();
+        String nic = txtNic.getText();
+        String contact = txtContactNumber.getText();
+        String birthday = String.valueOf(dpBirthday.getValue());
+        String gender = (String) cmbGender.getValue();
+        String regDate = txtregDate.getText();
+
+        if (studentBO.add(new StudentDTO(
+                id,
+                name,
+                address,
+                nic,
+                contact,
+                birthday,
+                gender,
+                regDate
+        ))){
+            txtStudentId.setText(null);
+            txtFullName.setText(null);
+            txtAddress.setText(null);
+            txtNic.setText(null);
+            txtContactNumber.setText(null);
+            dpBirthday.setValue(null);
+            cmbGender.setValue(null);
+            txtregDate.setText(null);
+            new Alert(Alert.AlertType.INFORMATION, "Added...!").show();
+        }
+
     }
 }
